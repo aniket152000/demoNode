@@ -6,7 +6,12 @@ const server = http.createServer((req, res) => {
   res.end('Hello, World!');
 });
 
-const port = 3000;
-server.listen(port, () => {
-  console.log(`Server running at http://localhost:${port}/`);
+const port = process.env.PORT || 3000;
+
+// server.listen(port, () => {
+//   console.log(`Server running at http://localhost:${port}/`);
+// });
+
+server.listen(port, "0.0.0.0", function () {
+   console.log(`server running at ${port}`);
 });
